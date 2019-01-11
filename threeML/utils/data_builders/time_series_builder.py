@@ -354,6 +354,15 @@ class TimeSeriesBuilder(object):
         return self._tstop
 
     @property
+    def time_series(self):
+        """                                                                                                                                                                                                                                                                   
+        returns the time_series                                                                                                                                                                                                                                               
+        :return: time_series                                                                                                                                                                                                                                                  
+        """
+
+        return self._time_series
+    
+    @property
     def bins(self):
 
         return self._time_series.bins
