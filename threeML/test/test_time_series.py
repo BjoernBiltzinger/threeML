@@ -148,7 +148,14 @@ def test_read_gbm_tte():
                                               poly_order=-1)
 
         nai3.set_active_time_interval('0-1')
+
+        assert nai3.time_series.poly_fit_exists
+
+        assert nai3.time_series.binned_spectrum_set.n_channels>0
+        
         nai3.set_background_interval('-20--10', '100-200')
+
+        assert not nai3.time_series.poly_fit_exists 
 
 
 
@@ -289,3 +296,7 @@ def test_read_lle():
         assert new_errors == old_errors
 
         assert old_tmin_list == new_tmin_list
+
+
+
+
